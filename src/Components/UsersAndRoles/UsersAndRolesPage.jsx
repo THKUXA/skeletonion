@@ -37,7 +37,7 @@ const UsersAndRolesPage = () => {
   const DosimeterReader = [0,0,0,0,0,0,0,1,0,0,1,0,1,1,1,0,0,1,0,1]
   const RolePermissions = [CorpIT,DS,RTS,CorpQA,QAM,GM,SeniorReader,DosimeterReader]
 
-  const UserList = ["John Smith", "Jane Doe", "Stephen Curry", "Jayson Tatum", "Kyle Lowry", "Pascal Siakam", "Scottie Barnes", "Fred Vanvleet"]
+  const UserList = ["John Smith", "Jane Doe", "Joe Smith", "Mike Smith", "Juan Carlos", "Mike Jones", "David Jones", "Jane Smith"]
   //End of Sample data
   const UsersandRoles = Roles.map((Role,index)=>
   <UandRRole UserGroup={Role} Users = {UserList[index]} Permissions = {RolePermissions[index]} PermissionList = {permissionlist} className = 'RoleItem'/>
