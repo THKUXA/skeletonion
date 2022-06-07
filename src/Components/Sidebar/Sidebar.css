@@ -9,6 +9,7 @@
     overflow: hidden;
     flex-shrink: 0;
     box-shadow:  -1px 4px 15px -1px #1d3a4915;
+    position: fixed;
     }
     
     
