@@ -12,25 +12,27 @@
     text-align: center;
     padding-top: 4%;
     
-    
 }
 .RoleUserDiv{
     width: 30%;
     float: left;
     padding-top: 4%;
+    font-size: 150%;
 }
 .RolePermissions{
     float: left;
-
+    font-size: 110%;
+    
 }
 .RoleGranted{
     color: green;
     display: flex;
-    
+    padding-bottom: 5px;
 }
 .RoleDenied{
     color: red;
     display: flex;
+    padding-bottom: 5px;
 }
 .e-people:before{
     content: '\\e424';
