@@ -1,7 +1,7 @@
 import './App.css';
 import Sidebar from './Components/Sidebar/Sidebar';
-import Mainpage from './Components/Mainpage/Mainpage';
-import UsersAndRolesPage from './Components/UsersAndRoles/UsersAndRolesPage';
+import Mainpage from './Layouts/Mainpage/Mainpage';
+import RolesAndPermsPage from './Layouts/RolesPage/RolesAndPermsPage';
 import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
 
 
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route exact path = "/" element = {<Mainpage />} />
           <Route exact path = "/Notifications" element = {<Mainpage />} />
-          <Route exact path = "/Admin/UsersAndRoles" element = {<UsersAndRolesPage />}/>
+          <Route exact path = "/Admin/UsersAndRoles" element = {<RolesAndPermsPage />}/>
           
         </Routes>
         

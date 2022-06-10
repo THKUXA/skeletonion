@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import UandRRole from './UandRRole/UandRRole'
-import { GridComponent, GridLine } from '@syncfusion/ej2-react-grids'
-import './UsersAndRolesPage.css'
-const UsersAndRolesPage = () => {
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+import './RolesAndPermsPage.css'
+import UandRRole from '../../Components/RolesAndPerms/RandPRole/UandRRole.jsx'
+const RolesAndPermsPage = () => {
   const [Edit, setEdit] = useState(0)
   
   //Sample Data
@@ -41,9 +41,10 @@ const UsersAndRolesPage = () => {
 
   const UserList = [["John Smith", "Bob Jones", "Darrell Jones"], ["Jane Doe","John Doe"], ["Joe Smith"], ["Mike Smith", "Wayne Gretzky", "Mike Trout", "Michael Jordan"], ["Juan Carlos"], ["Mike Jones"], ["David Jones"], ["Jane Smith"]]
   //End of Sample data
-  const UsersandRoles = Roles.map((Role,index)=>
-  <UandRRole UserGroup={Role} Users = {UserList[index]} Permissions = {RolePermissions[index]} PermissionList = {permissionlist} Editable = {Edit} className = 'RoleItem'/>
-  )
+  const addUser = async(index, name) => {
+    console.log("asdf")
+    UserList[index].append(name);
+  }
   const toggleEdit = async() => {
     if(Edit){
       setEdit(0)
@@ -51,30 +52,41 @@ const UsersAndRolesPage = () => {
       setEdit(1)
     }
   }
+  const AddRoleButton = (Edit && <ButtonComponent className='addeditbuttons'>Dont add Role</ButtonComponent>) || <ButtonComponent className='addeditbuttons' >Add Role</ButtonComponent>
+  
   const EditBtns = 
   (Edit &&
-  <ul style={{display:'flex'}}>
-    <button className='addeditbuttons' onClick = {() => {toggleEdit()}}>Save</button>
-    <button className='cancelbuttons' onClick = {() => {toggleEdit()}}>Cancel</button>
+    <ul style={{display:'flex'}}>
+    <ButtonComponent className='addeditbuttons' onClick = {() => {toggleEdit()}}>Save</ButtonComponent>
+    <ButtonComponent className='cancelbuttons' onClick = {() => {toggleEdit()}}>Cancel</ButtonComponent>
   </ul>) ||
-  (<ul>
-    <button className='addeditbuttons' onClick = {() => {toggleEdit()}}>Edit</button>
+  (<ul style={{display:'flex'}}>
+    <ButtonComponent className='addeditbuttons' onClick = {() => {toggleEdit()}}>Edit</ButtonComponent>
+
   </ul>)
       
-  
-
-  return (
-    <div className='UAndRDiv'>
-      <ul className='PageHeader'>
-        <h1 style={{width: '33%'}}>Group</h1>
-        <h1 style={{width: '20%'}}>Users</h1>
-        <h1 style={{width: '35%'}}>Permissions</h1>
-      </ul>
-      <ul>{EditBtns}</ul>
-      <ul>{UsersandRoles}</ul>
-      <button className='addeditbuttons'>Add Role</button>
-    </div>
+      
+  const UsersandRoles = Roles.map((Role,index)=>
+    <UandRRole 
+      UserGroup={Role} 
+      Users = {UserList[index]} 
+      Permissions = {RolePermissions[index]} 
+      PermissionList = {permissionlist} 
+      Editable = {Edit} 
+      index = {index} 
+      addUser = {addUser}
+      className = 'RoleItem' 
+    />
   )
+      
+    return (
+      <div className='UAndRDiv'>
+        <ul>{AddRoleButton}</ul>
+        <ul>{EditBtns}</ul>
+        <ul>{UsersandRoles}</ul>
+
+      </div>
+    )
 }
 
-export default UsersAndRolesPage
+export default RolesAndPermsPage

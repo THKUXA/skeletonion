@@ -1,0 +1,80 @@
+.OuterDiv{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(28, 27, 27);
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.RoleNameDiv{
+    width: 30%;
+    overflow: hidden; 
+    text-align: center;
+    padding-top: 4%;
+    
+}
+.RoleUserDiv{
+    width: 30%;
+    float: left;
+    padding-top: 4%;
+    font-size: 150%;
+}
+.RolePermissions{
+    float: left;
+    font-size: 110%;
+    
+}
+.RoleGranted{
+    color: green;
+    display: flex;
+    padding-bottom: 5px;
+}
+.RoleDenied{
+    color: red;
+    display: flex;
+    padding-bottom: 5px;
+}
+.e-people:before{
+    content: '\\e424';
+    font-size: 250%;
+}
+.addeditbuttons{
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 8px 16px 0 rgba(58, 127, 164, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    font-size: 16px;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.addeditbuttons:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+.selectAllButton{
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 8px 8px 0 rgba(58, 127, 164, 0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.selectAllButton:hover {
+    background-color: #008CBA;
+    color: white;
+  }

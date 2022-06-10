@@ -55,8 +55,8 @@ const Sidebar = ({}) => {
                 elemBefore: () => <AdminPanelSettingsIcon />,
                 subNav:[
                   {
-                    title: 'Users and Roles',
-                    itemId: '/Admin/UsersAndRoles',
+                    title: 'Roles and Permissions',
+                    itemId: '/Admin/RolesAndPermissions',
                     elemBefore: () => <GroupIcon />
                   }
                 ]
