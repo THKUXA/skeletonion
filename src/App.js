@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route exact path = "/" element = {<Mainpage />} />
           <Route exact path = "/Notifications" element = {<Mainpage />} />
-          <Route exact path = "/Admin/UsersAndRoles" element = {<RolesAndPermsPage />}/>
+          <Route exact path = "/Admin/RolesAndPermissions" element = {<RolesAndPermsPage />}/>
           
         </Routes>
         
