@@ -41,7 +41,7 @@ const RolesAndPermsPage = () => {
 
   const UserList = [["John Smith", "Bob Jones", "Darrell Jones"], ["Jane Doe","John Doe"], ["Joe Smith"], ["Mike Smith", "Wayne Gretzky", "Mike Trout", "Michael Jordan"], ["Juan Carlos"], ["Mike Jones"], ["David Jones"], ["Jane Smith"]]
   //End of Sample data
-  const addUser = async(index, name) => {
+  const addUser = async(index, name) => { 
     console.log("asdf")
     UserList[index].append(name);
   }

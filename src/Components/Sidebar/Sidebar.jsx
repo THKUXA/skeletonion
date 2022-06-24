@@ -63,6 +63,10 @@ const Sidebar = ({}) => {
               
 
               },
+              {
+                title: 'ScatterPlot',
+                itemId: '/ScatterPlot'
+              }
              
             ]}
           />
