@@ -1,0 +1,29 @@
+.drdm{
+    border-radius: 25px;
+}
+.parent{
+
+    justify-content: space-between;
+    margin-top: 17px
+}
+.dataparent{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px
+}
+.title{
+    margin-top: 36px; 
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Inter-Bold", "Inter Bold", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    text-align: left;
+    line-height: normal;
+}
+.dosimeterreader{
+    width: 339px;
+    border-radius: 25px;
+
+}

@@ -88,7 +88,7 @@ const Grid = ({rotation, size, divisions, flip, position, Flipx, Flipy, Flipz}) 
                     <Html position={[0,-size/1.5*flippedz,0]} style= {{width:'400px', display: 'inline'}}>
                         <div>
                             <h1>X-Axis</h1>
-                            </div>
+                        </div>
                     </Html>
                 ) ||
                 <></>

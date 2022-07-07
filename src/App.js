@@ -5,7 +5,7 @@ import RolesAndPermsPage from './Layouts/RolesPage/RolesAndPermsPage';
 import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
 
 import React, { useRef, useState } from 'react';
-import ScatterPlot from './Components/ScatterPlot/ScatterPlot';
+import QADosimetry from './Layouts/QADosimetry/QADosimetry';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route exact path = "/" element = {<Mainpage />} />
           <Route exact path = "/Notifications" element = {<Mainpage />} />
           <Route exact path = "/Admin/RolesAndPermissions" element = {<RolesAndPermsPage />}/>
-          <Route exact path = "/ScatterPlot" element = {<ScatterPlot boxes = {boxes}/>}/>
+          <Route exact path = "/QA/Dosimetry" element  = {<QADosimetry boxes = {boxes}/>} />
 
           
         </Routes>

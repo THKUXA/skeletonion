@@ -64,9 +64,16 @@ const Sidebar = ({}) => {
 
               },
               {
-                title: 'ScatterPlot',
-                itemId: '/ScatterPlot'
-              }
+                title: 'QA',                              
+                subNav:[
+                  {
+                    title: 'Dosimetry',
+                    itemId: '/QA/Dosimetry',
+                  }
+                ]
+              
+
+              },
              
             ]}
           />

@@ -14,6 +14,7 @@ const ScatterPlot = ({boxes}) => {
   const [Flipy, setFlipy] = useState(false)
   const [Flipz, setFlipz] = useState(false)
   
+  const ocRef = useRef(null)
 
   function Box(props) {
     const mesh = useRef(null)
@@ -44,7 +45,9 @@ const ScatterPlot = ({boxes}) => {
       </>
     )
   }
-
+  function ResetCamera(){
+      ocRef.current.reset()
+  }
   function Camera(){
   
    
@@ -67,17 +70,20 @@ const ScatterPlot = ({boxes}) => {
     return null
   }
   return (
-    <Canvas camera={{fov:75,  position: [size/2,size/2,size/2]}}>
-      <OrbitControls />
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Grid size={size} divisions = {14} rotation = {[0,0,1]} position = {[1,0,0]} flip = {Flipy} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
-      <Grid size={size} divisions = {5} rotation = {[0,1,0]} position = {[0,1,0]} flip = {Flipx} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
-      <Grid size={size} divisions = {9} rotation = {[1,0,0]} position = {[0,0,1]} flip = {Flipz} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
-      <Camera />
-      {boxes.map((item,i) => <Box position={item}/>)}
+    <>
+      <button onClick={ResetCamera} className ='cambutton'> Reset Camera</button>
+      <Canvas camera={{fov:75,  position: [size/2,size/2,size/2]}} className = 'Canvas'>
+      <OrbitControls ref={ocRef}/>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Grid size={size} divisions = {14} rotation = {[0,0,1]} position = {[1,0,0]} flip = {Flipy} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
+        <Grid size={size} divisions = {5} rotation = {[0,1,0]} position = {[0,1,0]} flip = {Flipx} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
+        <Grid size={size} divisions = {9} rotation = {[1,0,0]} position = {[0,0,1]} flip = {Flipz} Flipx = {Flipx} Flipy = {Flipy} Flipz = {Flipz}/>
+        <Camera />
+        {boxes.map((item,i) => <Box position={item}/>)}
 
-    </Canvas>
+      </Canvas>
+    </>
   )
 }
 
